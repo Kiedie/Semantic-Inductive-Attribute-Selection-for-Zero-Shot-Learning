@@ -1,0 +1,72 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work in progress</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --fg: #111;
+      --bg: #fff;
+      --link: #0366d6;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    }
+    .wrap {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+    h1 {
+      font-size: clamp(1.75rem, 2vw + 1.25rem, 3rem);
+      letter-spacing: 0.02em;
+      font-weight: 600;
+      margin: 0.25rem 1rem;
+    }
+    .subtle {
+      font-size: 0.95rem;
+      opacity: 0.7;
+      margin-top: 0.5rem;
+    }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      h1 {
+        animation: pulse 2.5s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: translateY(0); }
+        50% { opacity: 0.9; transform: translateY(-2px); }
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main" aria-label="Work in progress notice">
+    <section>
+      <h1>Work in progress</h1>
+      <p class="subtle">
+        See the project on
+        <a href="https://github.com/Kiedie/Semantic-Inductive-Attribute-Selection-for-Zero-Shot-Learning" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
