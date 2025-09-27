@@ -1,72 +1,852 @@
-
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Work in progress</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --fg: #111;
-      --bg: #fff;
-      --link: #0366d6;
-    }
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    }
-    .wrap {
-      min-height: 100%;
-      display: grid;
-      place-items: center;
-      text-align: center;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 2vw + 1.25rem, 3rem);
-      letter-spacing: 0.02em;
-      font-weight: 600;
-      margin: 0.25rem 1rem;
-    }
-    .subtle {
-      font-size: 0.95rem;
-      opacity: 0.7;
-      margin-top: 0.5rem;
-    }
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover,
-    a:focus {
-      text-decoration: underline;
-    }
-    @media (prefers-reduced-motion: no-preference) {
-      h1 {
-        animation: pulse 2.5s ease-in-out infinite;
-      }
-      @keyframes pulse {
-        0%, 100% { opacity: 1; transform: translateY(0); }
-        50% { opacity: 0.9; transform: translateY(-2px); }
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Shot Learning | Advanced AI Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 </head>
-<body>
-  <main class="wrap" role="main" aria-label="Work in progress notice">
-    <section>
-      <h1>Work in progress</h1>
-      <p class="subtle">
-        See the project on
-        <a href="https://github.com/Kiedie/Semantic-Inductive-Attribute-Selection-for-Zero-Shot-Learning" target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>.
-      </p>
-    </section>
-  </main>
+<body id="top">
+    <header class="header">
+        <div class="nav-container">
+            <a href="#top" class="logo">🚀 ZSL Research</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <button class="mobile-menu-close" aria-label="Close mobile menu">✕</button>
+                <ul class="nav-menu">
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#semantic">Semantic Space</a></li>
+                    <li><a href="#preprocessing">Preprocessing</a></li>
+                    <li><a href="#partitioning">Partitioning</a></li>
+                    <li><a href="#techniques">Techniques</a></li>
+                    <li><a href="#citation">Citation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-particles">
+                <div class="particle particle-1"></div>
+                <div class="particle particle-2"></div>
+                <div class="particle particle-3"></div>
+                <div class="particle particle-4"></div>
+                <div class="particle particle-5"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">🎯 Advanced AI Research</div>
+                <h1>Zero-Shot Learning</h1>
+                <p>Breaking barriers in Artificial Intelligence: Teach once, recognize infinite possibilities. The next frontier of machine learning is here.</p>
+                <div class="hero-actions">
+                    <a href="#introduction" class="cta-button">Discover More</a>
+                    <a href="https://github.com/Kiedie/Semantic-Inductive-Attribute-Selection-for-Zero-Shot-Learning" class="cta-secondary" target="_blank">
+                        <span>🔗</span>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="introduction" class="section js-animate">
+            <div class="section-card">
+                <div class="section-number">1</div>
+                <h2>🎯 Introduction to Zero-Shot Learning</h2>
+                <p>
+                    <span class="highlight">Zero-Shot Learning (ZSL)</span> represents a revolution in the field of machine learning. 
+                    Imagine a system that can recognize and classify objects it has <span class="emphasis">never seen before</span> 
+                    during its training. This is not science fiction, it's the reality of ZSL.
+                </p>
+                <p>
+                    Unlike traditional learning that requires examples of all possible classes, 
+                    ZSL uses <span class="highlight">semantic knowledge</span> to make inferences about completely new classes.
+                </p>
+                <h3>🌟 Why is it Revolutionary?</h3>
+                <ul class="feature-list">
+                    <li><strong>Infinite Scalability:</strong> No need for training data for each new class</li>
+                    <li><strong>Instant Adaptability:</strong> Recognizes new categories immediately</li>
+                    <li><strong>Resource Efficiency:</strong> Dramatically reduces data requirements</li>
+                    <li><strong>Universal Applicability:</strong> From rare species recognition to medical diagnostics</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="semantic" class="section js-animate">
+            <div class="section-neutral">
+                <div class="section-number">2</div>
+                <h2>🧠 The Semantic Space</h2>
+                <p>
+                    The semantic space is the foundation of Zero-Shot Learning, as it provides the attributes that link seen and unseen classes. These attributes can be constructed in two main ways:
+                </p>
+                
+                <div class="semantic-cards">
+                    <article class="semantic-card semantic-card--human">
+                        <h4>🧑‍🏫 Human-Annotated Spaces</h4>
+                        <ul>
+                            <li>Generated from human experts</li>
+                            <li>Interpretable and transparent</li>
+                            <li>Significant human effort</li>
+                        </ul>
+                    </article>
+                    <article class="semantic-card semantic-card--generated">
+                        <h4>🤖 Model-Generated Spaces</h4>
+                        <ul>
+                            <li>Generated from the output of a model</li>
+                            <li>Less human effort</li>
+                            <li>High dimensional spaces</li>
+                        </ul>
+                    </article>
+                </div>
+                
+                <p class="semantic-note">
+                    In practice, no type of semantic space is free from noise or irrelevant information, which makes their <span class="emphasis">refinement</span> essential for improving generalization in Zero-Shot Learning.
+                </p>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="preprocessing" class="section js-animate">
+            <div class="section-lined">
+                <div class="section-number">3</div>
+                <h2>⚙️ Intelligent Preprocessing</h2>
+                <p>
+                    Preprocessing is crucial in ZSL as the quality of the semantic space directly affects the 
+                    ability to generalize to unseen classes. Attributes are often noisy, redundant, or weakly correlated with visual differences,
+                    undermining performance. By refining it, models can focus on the most informative attributes, improving both performance and interpretability.
+                </p>
+                <h3>🔧 Difficulties in preprocessing</h3>
+                <ul class="feature-list">
+                    <li><strong>Tabular structure with one instance per class:</strong> Unlike standard datasets, the semantic space has only one prototype vector per class, limiting statistical evaluation.</li>
+                    <li><strong>Risk of overfitting:</strong> Traditional preprocessing techniques overfit, producing subsets that fail to generalize.</li>
+                    <li><strong>Bias toward seen classes:</strong> Any preprocessing based only on seen classes <span class="emphasis">(inductive setting)</span> risks being unrepresentative for unseen classes.</li>
+                    <li><strong>Attribute Redundancy:</strong> Many attributes overlap (e.g., “has a tail” and “has four legs” for dogs and horses), adding little discriminative power.</li>
+                </ul>
+                <p>
+                    Our preprocessing approach operates in an inductive setting (the most challenging), takes all the above into account and focuses on <span class="emphasis">preserving critical semantic relationships</span> 
+                    while eliminating noise that could confuse the transfer process. It does not overfit, it does not bias towards seen classes, and it actively reduces attribute redundancy and handles
+                    the single-instance-per-class challenge.
+                </p>
+                
+                <!-- START FSA ALTERNATIVE -->
+                <div class="fsa-container-alternative">
+                    <div class="fsa-glassmorphism">
+                        <div class="fsa-halo"></div>
+                        <img src="../images/fsa.png" alt="Feature Selection Algorithm" class="fsa-image" title="Click to zoom">
+                    </div>
+                    <p class="image-caption">
+                        🔧 <strong>Feature Selection Algorithm:</strong> 
+                        Advanced preprocessing pipeline that optimizes feature extraction and dimensionality reduction
+                    </p>
+                </div>
+                <!-- END FSA ALTERNATIVE -->
+                
+                <!-- TODO: revert FSA alternative 
+                <div class="image-container">
+                    <img src="../images/fsa.png" alt="Feature Selection Algorithm" class="responsive-image">
+                    <p class="image-caption">
+                        🔧 <strong>Feature Selection Algorithm:</strong> 
+                        Advanced preprocessing pipeline that optimizes feature extraction and dimensionality reduction
+                    </p>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <section id="partitioning" class="section js-animate">
+            <div class="section-card">
+                <div class="section-number">4</div>
+                <h2>🔄 Advanced Partitioning Algorithm</h2>
+                
+                <!-- Callout -->
+                <div class="apa-callout">
+                    <div class="apa-callout-icon">🧭</div>
+                    <div class="apa-callout-content">
+                        <p><strong>Objective:</strong> Recreate an inductive ZSL scenario using only seen classes \(\mathcal{Y}^s\), generating pseudo-unseen partitions.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline subtitle and workflow -->
+                <h3 class="apa-subtitle">Stratified k-fold workflow</h3>
+                <p>Each of the K folds rotates the seen classes \(\mathcal{Y}^s\) to produce mutually exclusive pseudo-seen \(\mathcal{Y}^{ps}\) and pseudo-unseen \(\mathcal{Y}^{pu}\) subsets.</p>
+
+                <!-- Timeline -->
+                <div class="apa-timeline">
+                    <div class="apa-step">
+                        <div class="apa-step-number"><span>1</span><span class="apa-step-icon">🧩</span></div>
+                        <div class="apa-step-content">
+                            <h4>Stratify \(\mathcal{Y}^s\)</h4>
+                            <p>Split the seen classes into K folds class-stratified</p>
+                        </div>
+                    </div>
+                    <div class="apa-step">
+                        <div class="apa-step-number"><span>2</span><span class="apa-step-icon">🔄</span></div>
+                        <div class="apa-step-content">
+                            <h4>Create \(\mathcal{Y}^{ps}\) and \(\mathcal{Y}^{pu}\)</h4>
+                            <p>Within each fold, assign buckets to \(\mathcal{Y}^{ps}\) (train) and \(\mathcal{Y}^{pu}\) (validation), ensuring strict disjointness.</p>
+                        </div>
+                    </div>
+                    <div class="apa-step">
+                        <div class="apa-step-number"><span>3</span><span class="apa-step-icon">🔍</span></div>
+                        <div class="apa-step-content">
+                            <h4>Rotate and evaluate</h4>
+                            <p>Repeat K times so every class appears at least once in \(\mathcal{Y}^{pu}\), measuring inductive performance fold by fold.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Two-column layout -->
+                <div class="apa-layout">
+                    <div class="apa-layout-media">
+                        <figure class="apa-figure">
+                            <img src="../images/kcrossvali.png" alt="K-Cross Validation Scheme" class="responsive-image">
+                            <figcaption class="image-caption">
+                                📊 <strong>Class-stratified k-fold scheme</strong>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="apa-layout-content">
+                        <!-- Requirements card -->
+                        <div class="apa-card apa-card--requirements">
+                            <h3>⚖️ Requirements for a fair split</h3>
+                            <ul class="apa-bullets">
+                                <li><strong>Balance:</strong> each pseudo-unseen subset differs by at most one class from the others.</li>
+                                <li><strong>Coverage:</strong> every class in \(\mathcal{Y}^s\) appears only once as \(\mathcal{Y}^{pu}\) across the K folds.</li>
+                                <li><strong>Disjointness:</strong> pseudo-unseen subsets from different folds remain mutually exclusive.</li>
+                            </ul>
+                            <p class="apa-note">These criteria prevent class bias and stabilize cross-fold evaluation.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Glossary -->
+                <div class="apa-glossary">
+                    <dl class="apa-definitions">
+                        <div class="apa-definition">
+                            <dt>\(\mathcal{Y}^s\)</dt>
+                            <dd>Seen classes available during training. <span class="badge badge-base">Source</span></dd>
+                        </div>
+                        <div class="apa-definition">
+                            <dt>\(\mathcal{Y}^{ps}\)</dt>
+                            <dd>Pseudo-seen: training split per fold. <span class="badge badge-train">Train</span></dd>
+                        </div>
+                        <div class="apa-definition">
+                            <dt>\(\mathcal{Y}^{pu}\)</dt>
+                            <dd>Pseudo-unseen: validation split mimicking unseen classes. <span class="badge badge-valid">Eval</span></dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- Conclusion -->
+                <div class="apa-conclusion">
+                    <h3>🧭 Importance</h3>
+                    <p>It enables working under inductive conditions. By simulating unseen classes using the seen ones, it recreates a controlled ZSL environment for training models, fostering generalization and knowledge transfer. 
+                        Moreover, the systematic and balanced partitioning ensures that every class is treated as unseen exactly once, providing a fair and reliable evaluation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="techniques" class="section js-animate">
+            <div class="section-minimal">
+                <div class="section-number">5</div>
+                <h2>⚡ Revolutionary Techniques</h2>
+                <p>
+                    We have developed an arsenal of complementary techniques that work in synergy to achieve 
+                    exceptional zero-shot performance. Each technique addresses different aspects of the challenge, 
+                    creating a <span class="emphasis">robust and versatile system</span>.
+                </p>
+                
+                <div class="technique-grid">
+                    <div class="technique-card js-animate">
+                        <h3>🎨 RFS – Ranking-based Feature Selection</h3>
+                        <p>
+                            <span class="highlight">Ranking-based Feature Selection</span> refines 
+                            the semantic attribute space with an embedded ranking plus a cross-validated
+                            wrapper over a class-stratified partition. It selects the attribute subset that 
+                            maximizes pseudo-unseen accuracy, and stabilizes it with an inter-fold consensus threshold.
+                        </p>
+                        <ul class="feature-list">
+                            <li><strong>Embedded Ranking:</strong> Build an attribute-importance ranking on seen semantic prototypes using embedded FS.</li>
+                            <li><strong>Wrapper:</strong> Select the optimal subset of attributes from the ranking.</li>
+                            <li><strong>Consensus:</strong> Retain attributes that appear across folds above a threshold.</li>
+                        </ul>
+                        
+                        <div class="image-container">
+                            <img src="../images/hais.png" alt="RFS Architecture Diagram" class="responsive-image">
+                        </div>
+                        <p class="image-caption">
+                            🏗️ <strong>RFS Architecture:</strong> 
+                            Each fold builds an embedded ranking and evaluates top-i masks by training on pseudo-seen and validating on pseudo-unseen; 
+                            the best mask per fold is retained. A cross-fold consensus with threshold <em>T</em> yields a stable final subset.
+                        </p>
+                    </div>
+                    
+                    <div class="technique-card js-animate">
+                        <h3>🧬 Evolutionary Genetic Algorithm</h3>
+                        <p>
+                            The <span class="highlight">Genetic Algorithm (GA)</span> frames attribute selection as a global combinatorial search. 
+
+                        </p>
+                        <ul class="feature-list">
+                            <li><strong>Representation:</strong> Individuals encode attribute subsets as binary vectors of length <em>N</em>.</li>
+                            <li><strong>Fitness:</strong> Fold-averaged pseudo-unseen accuracy</li>
+                            <li><strong>Genetic Operators:</strong> Population evolves through generations via genetic operators.</li>
+                        </ul>
+                        <h3>🔬 Evolutionary Process</h3>
+                        <p>
+                            Each generation of the algorithm refines attribute selection through specific genetic operators:
+                        </p>
+                        <ul class="feature-list">
+                            <li><strong>🏟️ Tournament Selection:</strong> Selects parent individuals through competitive tournaments of size 3</li>
+                            <li><strong>🧬 Uniform Crossover:</strong> Combines parent features with 0.5 probability per attribute</li>
+                            <li><strong>⚡ Bit-Flip Mutation:</strong> Randomly toggles attributes with probability 1/L (L=total attributes)</li>
+                            <li><strong>🔄 Simple Evolution Strategy:</strong> Generational replacement maintaining constant population size</li>
+                            <li><strong>🏆 Hall of Fame:</strong> Preserves the best solutions found across all generations</li>
+                            <li><strong>📊 Dynamic Fold Training:</strong> Adapts evaluation criteria by rotating cross-validation folds</li>
+                        </ul>
+                        <p>
+                            This evolutionary approach allows us to discover <span class="emphasis">non-intuitive feature combinations</span> 
+                            that maximize zero-shot performance, overcoming the limitations of traditional selection methods.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Citation Section -->
+        <section id="citation" class="citation-section">
+            <div class="container">
+                <h2 class="section-title">📚 Cite this work</h2>
+                <p class="section-description">
+                    If you use this work in your research, you can cite it using the BibTeX format provided below.
+                </p>
+                
+                <div class="citation-card">
+                    <div class="bibtex-badge">BibTeX</div>
+                    <div class="bibtex-block">
+                        <pre><code id="bibtex-entry">@article{SIAS25,
+title={Semantic Inductive Attribute Selection for Zero-Shot Learning},
+author={Herrera-Aranda, JJ., Gomez-Trenado, G., Triguero, I., Herrera, F.},
+journal={Journal Name},
+year={2025},
+volume={X},
+pages={X--X}
+}</code></pre>
+                    </div>
+                    <div class="bibtex-actions">
+                        <button class="btn-primary" data-copy-target="#bibtex-entry">
+                            <span class="btn-text">Copiar BibTeX</span>
+                        </button>
+                        <a href="#" class="btn-secondary" download="citation.bib">
+                            <span>📥</span>
+                            Descargar .bib
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners/Use Cases Section -->
+        <section class="partners-section">
+            <div class="container">
+                <h2 class="section-title">🎓 Academic Collaboration & Funding</h2>
+                <div class="partners-grid">
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="../images/UGR-MARCA-01-color.png" alt="Universidad de Granada" class="partner-logo-img">
+                        </div>
+                        <span>Universidad de Granada</span>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="../images/Nottingham_Blue_white_text_logo_SCREEN.png" alt="University of Nottingham" class="partner-logo-img">
+                        </div>
+                        <span>University of Nottingham</span>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="../images/42539519.png" alt="Project Funding" class="partner-logo-img">
+                        </div>
+                        <span>DasCi</span>
+                    </div>
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="../images/logo_iafer_cib_desc_h.png" alt="IAFER Research Institute" class="partner-logo-img">
+                        </div>
+                        <span>IAFER</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // ========================================
+        // SISTEMA DE MICROINTERACCIONES AVANZADO
+        // ========================================
+
+        // Detección de JavaScript para fallback
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+
+        // ========================================
+        // NAVEGACIÓN MÓVIL CON HAMBURGUESA
+        // ========================================
+        
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const nav = document.querySelector('.nav');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        
+        // Detectar si el usuario usa teclado (pointer fino)
+        const isKeyboardUser = window.matchMedia('(pointer: fine)').matches;
+        
+        // Toggle del menú móvil
+        function toggleMobileMenu() {
+            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            
+            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+            mobileMenuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+            
+            // Gestión de focus solo para usuarios de teclado
+            if (!isExpanded && isKeyboardUser) {
+                // Menú se abre - focus en primer enlace solo si es usuario de teclado
+                setTimeout(() => navLinks[0]?.focus(), 300);
+            } else if (isExpanded) {
+                // Menú se cierra - focus en botón hamburguesa
+                mobileMenuToggle.focus();
+            }
+            
+            // Prevenir scroll del body cuando el menú está abierto
+            document.body.style.overflow = !isExpanded ? 'hidden' : '';
+        }
+        
+        // Event listeners para menú móvil
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+            
+            // Botón de cerrar
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', toggleMobileMenu);
+            }
+            
+            // Cerrar menú con Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && nav.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+            
+            // Cerrar menú al hacer click en enlace
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (nav.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+            
+            // Cerrar menú al hacer click fuera
+            document.addEventListener('click', (e) => {
+                if (nav.classList.contains('active') && 
+                    !nav.contains(e.target) && 
+                    !mobileMenuToggle.contains(e.target)) {
+                    toggleMobileMenu();
+                }
+            });
+        }
+
+        // Configuración del IntersectionObserver para animaciones
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        // Observer para secciones principales
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Añadir delay escalonado para efecto cascada
+                    setTimeout(() => {
+                        entry.target.classList.add('fade-in');
+                    }, index * 150);
+                }
+            });
+        }, observerOptions);
+
+        // Observer para technique cards con stagger animation
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Inicializar observers cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observar secciones principales
+            document.querySelectorAll('.section.js-animate').forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Observar technique cards
+            document.querySelectorAll('.technique-card.js-animate').forEach(card => {
+                cardObserver.observe(card);
+            });
+        });
+
+        // ========================================
+        // NAVEGACIÓN SUAVE MEJORADA
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Calcular offset para header fijo
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ========================================
+        // HEADER DINÁMICO CON EFECTOS MEJORADOS
+        // ========================================
+        let ticking = false;
+        
+        function updateHeader() {
+            const header = document.querySelector('.header');
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            if (scrolled > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.96)';
+                header.style.boxShadow = '0 8px 32px rgba(0, 123, 255, 0.15)';
+                header.style.borderBottomColor = 'rgba(0, 123, 255, 0.4)';
+            } else {
+                header.style.background = 'rgba(26, 26, 46, 0.92)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+                header.style.borderBottomColor = 'rgba(0, 123, 255, 0.3)';
+            }
+            
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTick);
+
+        // ========================================
+        // EFECTOS DE HOVER MEJORADOS
+        // ========================================
+        
+        // Efecto parallax sutil en hero
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.3;
+            
+            if (hero && scrolled < hero.offsetHeight) {
+                hero.style.transform = `translate3d(0, ${rate}px, 0)`;
+            }
+        });
+
+        // Efecto de resplandor en badges
+        document.querySelectorAll('.hero-badge').forEach(badge => {
+            badge.addEventListener('mouseenter', () => {
+                badge.style.animationDuration = '1.5s';
+            });
+            
+            badge.addEventListener('mouseleave', () => {
+                badge.style.animationDuration = '3s';
+            });
+        });
+
+        // ========================================
+        // OPTIMIZACIÓN DE RENDIMIENTO
+        // ========================================
+        
+        // Throttle para eventos de scroll
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func.apply(this, args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Precargar animaciones críticas
+        document.addEventListener('DOMContentLoaded', () => {
+            // Precarga de transforms para mejorar performance
+            document.querySelectorAll('.section-card, .technique-card').forEach(el => {
+                el.style.transform = 'translateZ(0)';
+            });
+        });
+
+        // ========================================
+        // MODAL DE ZOOM PARA IMÁGENES
+        // ========================================
+        
+        // Crear modal de zoom
+        function createImageModal() {
+            const modal = document.createElement('div');
+            modal.className = 'image-modal';
+            modal.innerHTML = `
+                <div class="modal-overlay">
+                    <div class="modal-content">
+                        <button class="modal-close" aria-label="Close image zoom">✕</button>
+                        <img class="modal-image" src="" alt="">
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            return modal;
+        }
+        
+        // Inicializar zoom de imágenes
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.responsive-image, .fsa-image');
+            let modal = null;
+            
+            images.forEach(img => {
+                // Click izquierdo para zoom
+                img.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    if (!modal) {
+                        modal = createImageModal();
+                    }
+                    
+                    const modalImg = modal.querySelector('.modal-image');
+                    const modalClose = modal.querySelector('.modal-close');
+                    
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt;
+                    modal.style.display = 'flex';
+                    
+                    // Cerrar modal
+                    const closeModal = () => {
+                        modal.style.display = 'none';
+                    };
+                    
+                    modalClose.onclick = closeModal;
+                    modal.onclick = (e) => {
+                        if (e.target === modal || e.target.className === 'modal-overlay') {
+                            closeModal();
+                        }
+                    };
+                    
+                    // Cerrar con Escape
+                    const handleEscape = (e) => {
+                        if (e.key === 'Escape') {
+                            closeModal();
+                            document.removeEventListener('keydown', handleEscape);
+                        }
+                    };
+                    document.addEventListener('keydown', handleEscape);
+                });
+                
+                // Indicador visual para zoom disponible
+                img.style.cursor = 'zoom-in';
+                img.title = 'Click to zoom';
+            });
+        });
+
+        // ======================================== 
+        // ACCESSIBILITY ENHANCEMENTS
+        // ========================================
+        
+        // Respetar preferencias de movimiento reducido
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        
+        if (prefersReducedMotion.matches) {
+            // Desactivar animaciones complejas para usuarios que prefieren movimiento reducido
+            document.documentElement.style.setProperty('--duration-fast', '0ms');
+            document.documentElement.style.setProperty('--duration-normal', '150ms');
+            document.documentElement.style.setProperty('--duration-slow', '300ms');
+        }
+
+        // Mejorar navegación por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('user-is-tabbing');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('user-is-tabbing');
+        });
+
+        // ========================================
+        // NUEVAS FUNCIONALIDADES DINÁMICAS
+        // ========================================
+
+        // Contadores animados para Stats Ribbon
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000; // 2 segundos
+                const step = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                        if (target >= 1000000) {
+                            counter.textContent = (target / 1000000).toFixed(1) + 'M+';
+                        } else if (target >= 1000) {
+                            counter.textContent = (target / 1000).toFixed(0) + 'K+';
+                        } else {
+                            counter.textContent = target + '%';
+                        }
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Parallax mejorado para elementos del hero
+        function enhancedParallax() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            
+            if (hero && scrolled < hero.offsetHeight) {
+                const badge = document.querySelector('.hero-badge');
+                const title = document.querySelector('.hero h1');
+                const actions = document.querySelector('.hero-actions');
+                
+                if (badge) badge.style.transform = `translateY(${scrolled * 0.1}px)`;
+                if (title) title.style.transform = `translateY(${scrolled * 0.15}px)`;
+                if (actions) actions.style.transform = `translateY(${scrolled * 0.05}px)`;
+            }
+        }
+
+        // Intersection Observer para Stats Ribbon
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Inicializar nuevas funcionalidades
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observar stats ribbon para animación de contadores
+            const statsRibbon = document.querySelector('.stats-ribbon');
+            if (statsRibbon) {
+                statsObserver.observe(statsRibbon);
+            }
+        });
+
+        // Agregar parallax mejorado al scroll existente
+        let parallaxTicking = false;
+        
+        function requestParallaxTick() {
+            if (!parallaxTicking && !prefersReducedMotion.matches) {
+                requestAnimationFrame(() => {
+                    enhancedParallax();
+                    parallaxTicking = false;
+                });
+                parallaxTicking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestParallaxTick);
+
+        // ========================================
+        // FUNCIONALIDAD DE COPIAR BIBTEX
+        // ========================================
+        
+        // Copiar BibTeX al portapapeles con feedback visual
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyButton = document.querySelector('[data-copy-target]');
+            
+            if (copyButton) {
+                copyButton.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    
+                    const targetSelector = copyButton.getAttribute('data-copy-target');
+                    const targetElement = document.querySelector(targetSelector);
+                    const buttonText = copyButton.querySelector('.btn-text');
+                    
+                    if (targetElement && buttonText) {
+                        try {
+                            // Copiar texto al portapapeles
+                            await navigator.clipboard.writeText(targetElement.textContent.trim());
+                            
+                            // Feedback visual - cambiar texto temporalmente
+                            const originalText = buttonText.textContent;
+                            buttonText.textContent = 'Copiado ✅';
+                            copyButton.classList.add('success');
+                            
+                            // Restaurar texto original después de 2 segundos
+                            setTimeout(() => {
+                                buttonText.textContent = originalText;
+                                copyButton.classList.remove('success');
+                            }, 2000);
+                            
+                        } catch (err) {
+                            // Fallback para navegadores que no soportan clipboard API
+                            console.warn('Error copiando al portapapeles:', err);
+                            
+                            // Seleccionar texto como alternativa
+                            const range = document.createRange();
+                            range.selectNode(targetElement);
+                            window.getSelection().removeAllRanges();
+                            window.getSelection().addRange(range);
+                            
+                            buttonText.textContent = 'Texto seleccionado';
+                            setTimeout(() => {
+                                buttonText.textContent = 'Copiar BibTeX';
+                                window.getSelection().removeAllRanges();
+                            }, 2000);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
